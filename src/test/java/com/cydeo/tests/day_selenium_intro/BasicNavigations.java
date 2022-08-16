@@ -11,8 +11,15 @@ public class BasicNavigations {
         //1- Set up the browser driver
         WebDriverManager.chromedriver().setup();
 
+
         //2- Create instance of  the Selenium webDriver
+        // This is the line opening an empty browser
         WebDriver driver = new ChromeDriver();
+
+        //This line will maximize the browser size
+        driver.manage().window().maximize();
+
+        driver.manage().window().fullscreen();
 
         //3-- Go to "https://www.tesla.com"
         driver.get("https://www.tesla.com");
@@ -20,6 +27,12 @@ public class BasicNavigations {
         // get the title of the page
         String currentTitle = driver.getTitle();
         System.out.println( "currentTitle = "+ currentTitle);
+
+        // Get the current  URL using Selenium
+        String currentURL = driver.getCurrentUrl();
+
+        System.out.println("currentURL = " +currentURL);
+
 
         //Stop code execution  for 3 seconds
         Thread.sleep(3000);
@@ -37,12 +50,11 @@ public class BasicNavigations {
         //Stop code execution  for 3 seconds
         Thread.sleep(3000);
 
-        // use selenium to navigate refresh
-        driver.navigate().refresh();
 
         // use navigate().to():
         driver.navigate().to("https://www.google.com");
 
+        //get the current title after getting the google page
         currentTitle = driver.getTitle();
 
 
@@ -51,6 +63,19 @@ public class BasicNavigations {
 
 
         System.out.println("currentTitle = " + currentTitle);
+
+       // Get the current  URL using Selenium
+       currentURL = driver.getCurrentUrl();
+
+        System.out.println("currentURL = " +currentURL);
+
+       // this will close all of the opened window
+        driver.quit();
+
+        // this will close currently opened window
+        driver.close();
+
+
 
     }
 
