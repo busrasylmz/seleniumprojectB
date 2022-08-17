@@ -37,7 +37,8 @@ public class T5_getText_getAttribute {
 
         //Expected: Registration form
         //4- Locate “First name” input box
-        WebElement firstNameInput = driver.findElement(By.name("firstname"));
+        //WebElement firstNameInput = driver.findElement(By.name("firstname"));
+        WebElement firstNameInput = driver.findElement(By.className("form-control"));
 
         //5- Verify placeholder attribute’s value is as expected:
         String expectedPlaceholder= "first name";
