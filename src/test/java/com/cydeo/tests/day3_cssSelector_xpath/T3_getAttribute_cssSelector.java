@@ -32,6 +32,7 @@ public class T3_getAttribute_cssSelector {
        // LOCATED USING VALUE ATTRIBUTE
         WebElement signInButton =driver.findElement(By.cssSelector("input[value='Log In']"));
 
+        String exeptedButtonText = "Log in";
 
         //String expectedButtonText = "Log In";
         String actualButtonText = signInButton.getAttribute("value");
@@ -39,5 +40,10 @@ public class T3_getAttribute_cssSelector {
         System.out.println("actualButtonText = " + actualButtonText);
 
 
+        if(actualButtonText.equals(exeptedButtonText)){
+            System.out.println("Log In button text verification passed!");
+        }else{
+            System.out.println("Log In button text verification failed!");
+        }
     }
 }
