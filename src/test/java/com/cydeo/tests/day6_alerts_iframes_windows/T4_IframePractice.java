@@ -37,6 +37,18 @@ public class T4_IframePractice {
         Assert.assertTrue(yourContentGoesHereText.isDisplayed());
 
 
+        //4. Assert: “Your content goes here.” Text is displayed.
+        //5. Assert: “An iFrame containing the TinyMCE WYSIWYG Editor”
+        driver.switchTo().parentFrame();
+
+        WebElement headerText = driver.findElement(By.xpath("//h3"));
+
+        headerText.isDisplayed();
+
+        Assert.assertTrue(headerText.isDisplayed());
+
+
+
     }
 
 }
